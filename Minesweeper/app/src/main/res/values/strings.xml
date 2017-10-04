@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Minesweeper</string>
+    <string name="toggle_off"> </string>
+    <string name="toggle_on"> </string>
+    <string name="reset_button">Reset Board</string>
+    <string name="size_text">8</string>
+    <string name="minus_sign">–</string>
+    <string name="size">Size</string>
+    <string name="plus_sign">+</string>
+    <string name="time">Time</string>
+</resources>

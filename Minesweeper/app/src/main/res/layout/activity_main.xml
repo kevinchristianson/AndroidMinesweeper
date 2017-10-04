@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/screen"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#272223"
+    tools:context="com.example.kevinchristianson.minesweeper.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:paddingTop="20dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="0dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="@string/size"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/minus"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:text="@string/minus_sign"/>
+
+                <TextView
+                    android:id="@+id/grid_size"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:text="@string/size_text"/>
+
+                <Button
+                    android:id="@+id/plus"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:text="@string/plus_sign"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="15dp">
+
+            <ToggleButton
+                android:id="@+id/toggle"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/flag"
+                android:textOn="@string/toggle_on"
+                android:textOff="@string/toggle_off"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="25dp">
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:text="@string/time"/>
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:textColor="@android:color/white"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <com.example.kevinchristianson.minesweeper.MinesweeperView
+        android:id="@+id/minesweeperView"
+        android:layout_width="350dp"
+        android:layout_height="350dp"/>
+
+    <!--<Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="#ffc600"
+        android:text="@string/reset_button"/>-->
+
+</LinearLayout>
