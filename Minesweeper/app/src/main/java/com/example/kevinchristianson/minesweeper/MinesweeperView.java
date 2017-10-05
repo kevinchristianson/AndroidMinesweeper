@@ -20,6 +20,7 @@ public class MinesweeperView extends View{
     private Bitmap flag;
     private Bitmap mine;
     private Bitmap mineClicked;
+    private Bitmap mineDefused;
     private Bitmap empty;
     private Bitmap one;
     private Bitmap two;
@@ -37,6 +38,7 @@ public class MinesweeperView extends View{
         flag = BitmapFactory.decodeResource(getResources(), R.drawable.flag);
         mine = BitmapFactory.decodeResource(getResources(), R.drawable.bomb);
         mineClicked = BitmapFactory.decodeResource(getResources(), R.drawable.bomb_clicked);
+        mineDefused = BitmapFactory.decodeResource(getResources(), R.drawable.bomb_defused);
         empty = BitmapFactory.decodeResource(getResources(), R.drawable.tile_clicked);
         one = BitmapFactory.decodeResource(getResources(), R.drawable.one);
         two = BitmapFactory.decodeResource(getResources(), R.drawable.two);
@@ -81,6 +83,7 @@ public class MinesweeperView extends View{
         map.put(8, eight.createScaledBitmap(eight, getWidth() / num, getHeight() / num, false));
         map.put(9, flag.createScaledBitmap(flag, getWidth() / num, getHeight() / num, false));
         map.put(10, unClicked.createScaledBitmap(unClicked, getWidth() / num, getHeight() / num, false));
+        map.put(11, mineDefused.createScaledBitmap(mineDefused, getWidth() / num, getHeight() / num, false));
     }
 
     private void drawTiles(Canvas canvas) {
@@ -120,8 +123,8 @@ public class MinesweeperView extends View{
             Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
             int scale = getWidth() / num;
             for (Tile bomb : MinesweeperModel.getInstance().getBombs()) {
-                if (!bomb.isFlagged()) {
-                    canvas.drawBitmap(map.get(-1), bomb.getX() * scale, bomb.getY() * scale, paint);
+                if (bomb.isFlagged()) {
+                    canvas.drawBitmap(map.get(11), bomb.getX() * scale, bomb.getY() * scale, paint);
                 }
             }
             ((MainActivity) getContext()).gameOver(true);
